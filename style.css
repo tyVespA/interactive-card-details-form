@@ -88,12 +88,10 @@ body {
    position: relative;
    display: flex;
    justify-content: flex-end;
-   box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
 }
 
-.card-back img{
+.card-back img, .card-front img{
    width: 80%;
-   
 }
 
 .card-back-code {
@@ -106,13 +104,8 @@ body {
 .card-front {
    position: absolute;
    padding-right: 20px;
-   position: absolute;
    bottom: -45px;
    left: 20px;
-}
-
-.card-front img {
-   width: 80%;
 }
 
 .card-logo, .card-front-code, .card-name, .expiration-date {
@@ -138,7 +131,7 @@ body {
 }
 
 .card-name, .expiration-date {
-   bottom: 30px;
+   bottom: 25px;
 
    text-transform: uppercase;
    font-size: 0.65rem;
@@ -162,13 +155,54 @@ body {
    }
 }
 
+@media screen and (min-width: 700px) {
+   .card-back {
+      left: -15%;
+   }
+   .card-front {
+      left: 20%;
+   }
+}
+
+@media screen and (min-width: 1000px) {
+   .card-back {
+      left: -20%;
+   }
+   .card-front {
+      left: 25%;
+   }
+}
+
 .section-two {
    margin: 100px 25px 50px 25px;
+   display: flex;
+   justify-content: center;
+}
+
+.input-border {
+   background: var(--active-input-borders);
+   padding: 1px;
+   border-radius: 5px;
+   max-width: 450px;
+}
+
+.input-border-display {
+   visibility: hidden;
+}
+
+.container-input-date {
+   display: flex;
+   width: 100%;
 }
 
 form {
    display: flex;
    flex-direction: column;
+   max-width: 450px;
+}
+
+.form-display {
+   display: ;
 }
 
 label {
@@ -182,10 +216,23 @@ label {
 }
 
 input {
+   visibility: visible;
+   width: 100%;
    padding: 10px 15px;
    color: var(--neutral-500);
    border-radius: 5px;
    border: 1px solid var(--neutral-200);
+   outline: none;
+}
+
+.input-error {
+   color: var(--input-errors);
+   font-size: 0.9rem;
+   margin-top: 8px;
+}
+
+input[type=number] {
+   appearance: textfield;
 }
 
 .form-last-row {
@@ -195,10 +242,6 @@ input {
 
 .form-date, .form-cvc {
    width: 50%;
-}
-
-.form-date input{
-   width: 47.5%;
 }
 
 .form-cvc input {
@@ -211,4 +254,111 @@ button {
    padding: 15px;
    border-radius: 10px;
    border: transparent;
+   cursor: pointer;
+}
+
+.thank-you {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   width: 400px;
+}
+
+.thank-you-display {
+   display: none;
+}
+
+.icon-complete {
+   margin-bottom: 40px;
+}
+
+h2 {
+   text-transform: uppercase;
+   letter-spacing: 6px;
+   margin-bottom: 15px;
+}
+
+.description {
+   color: var(--neutral-500);
+   margin-bottom: 40px;
+}
+
+.btn-continue {
+   width: 375px;
+}
+
+@media screen and (min-width: 1200px) {
+   main {
+      display: flex;
+   }
+   .section-one {
+      height: 100vh;
+      background-image: url(images/bg-main-desktop.png);
+
+      display: flex;
+      width: 35%;
+      
+   }
+   .cards {
+      position: static;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0;
+   }
+   .card-back {
+      display: block;
+      position: absolute;
+      top: 52%;
+      left: 22%;
+      box-shadow: none;
+   }
+   .card-back-code {
+      top: 88px;
+      right: 138px;
+   }
+   .card-front {
+      top: -12%;
+      left: 45%;
+      position: relative;
+      padding: 0;
+   }
+
+   .expiration-date {
+      right: 132px;
+   }
+   
+   .card-back, .card-front {
+      width: 450px;
+   }
+
+   .expiration-date {
+      right: 115px;
+   }
+
+   .section-two {
+      width: 65%;
+      margin: 0;
+      padding-left: 100px;
+      display: flex;
+
+      justify-content: center;
+      align-items: center;
+   }
+
+   form {
+      max-width: 375px;
+   }
+}
+
+@media screen and (min-width: 1600px) {
+   .card-back {
+      left: 30%;
+   }
+   .card-front {
+      left: 85%
+   }
+}
+
+.display-none {
+   display: none;
 }
